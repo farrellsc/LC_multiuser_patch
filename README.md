@@ -10,10 +10,7 @@ The solution is to share csrftoken & LEETCODE_SESSION keys among multiple IPs. I
 ## Install 
 ### Install Leetcode-cli for Linux
 ```bash
-apt install npm
-apt install nodejs-legacy
-npm install -g leetcode-cli
-leetcode config autologin:enable false
+bash install.sh
 ```
 
 ### Install Leetcode-cli for Windows/Mac
@@ -34,4 +31,4 @@ For other systems, you need to find your leetcode-cli `.lc/user.json` configurat
 
 Since sharers of leetcode account are using the same web session, their behaviors will also be synchronized. For example, when user A wants to submit code using leetcode-cli, user B happens to be changing session to his/her private session, A would be submitting code to B's session. So each time before you run / submit code, you need to `leetcode session -e YOUR_SESSION` to enable your session.
 
-**Important: Don't log in yourself! (by leetcode-web or leetcode-cli) This will reject all other users and compromise leetcode configuration on the server. If you have problem using leetcode-cli after synchronizing configuration files, contact server admin.**
+**Important: The server blocks all pretended log-ins, so you can't login yourself.**
